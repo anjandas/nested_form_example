@@ -1,0 +1,10 @@
+<%= nested_form_for @survey do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <%= f.fields_for :questions %>
+  <p><%= f.link_to_add "Add a question", :questions %></p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>
